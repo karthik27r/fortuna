@@ -11,18 +11,19 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export const description =
-    "A login form with email and password. There's an option to login with Google and a link to sign up if you don't have an account."
+import { validateEmail, validatePassword } from '@/lib/validator';
 
-interface LoginFormProps {
+
+interface formTypeProps {
         setFormType: (formType: string) => void;
     }
     
-const LoginForm: React.FC<LoginFormProps> = ({ setFormType }) => {
+const LoginForm: React.FC<formTypeProps> = ({ setFormType }) => {
     return (
         <Card className="mx-auto max-w-sm">
             <CardHeader>
-                <CardTitle className="text-2xl">Login</CardTitle>
+            <CardTitle className="text-4xl font-retrofunk tracking-wider text-primary">fortuna</CardTitle>
+            <CardTitle className="text-xl mt-4 flex"> Sign-In to your account</CardTitle>
                 <CardDescription>
                     Enter your email below to login to your account
                 </CardDescription>
@@ -56,8 +57,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setFormType }) => {
                 </div>
                 <div className="mt-4 text-center text-sm">
                     Don&apos;t have an account?{" "}
-                    <a href="#" className="underline" onClick={() => setFormType('signup')}>
-                        Sign up
+                    <a className="underline" onClick={() => setFormType('signup')}>
+                        Sign up to fortuna
                     </a>
                 </div>
             </CardContent>
@@ -65,19 +66,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ setFormType }) => {
     )
 }
 
-export const SignUpdescription =
-    "A sign up form with first name, last name, email and password inside a card. There's an option to sign up with GitHub and a link to login if you already have an account"
-
-interface SignUpFormProps {
-    setFormType: (formType: string) => void;
-}
-
-const SignUpForm: React.FC<SignUpFormProps> = ({ setFormType }) => {
+const SignUpForm: React.FC<formTypeProps> = ({ setFormType }) => {
     return (
         <Card className="mx-auto max-w-sm">
             <CardHeader>
-                <CardTitle className="text-xl">Sign Up</CardTitle>
-                <CardDescription>
+            <CardTitle className="text-4xl font-retrofunk tracking-wider text-primary">fortuna</CardTitle>
+            <CardTitle className="text-xl mt-4 flex">Create an account</CardTitle>
+                <CardDescription className="flex" >
                     Enter your information to create an account
                 </CardDescription>
             </CardHeader>
@@ -115,7 +110,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setFormType }) => {
                 </div>
                 <div className="mt-4 text-center text-sm">
                     Already have an account?{" "}
-                    <a href="#" className="underline" onClick={() => setFormType('login')}>
+                    <a className="underline" onClick={() => setFormType('login')}>
                         Sign in
                     </a>
                 </div>
@@ -123,8 +118,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setFormType }) => {
         </Card>
     )
 }
-
-
 
 const Login: React.FC = () => {
     const [formType, setFormType] = useState('login');

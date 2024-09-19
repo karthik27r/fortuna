@@ -54,8 +54,12 @@ export default {
 					'5': 'hsl(var(--chart-5))'
 				}
 			}
+		},	
+		fontFamily:{
+			'retrofunk': 'Retrofunk'
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
+
 }
 

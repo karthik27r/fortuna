@@ -135,3 +135,8 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'Retrofunk';
+  src: local('Retrofunk'), url(./assets/fonts/Retrofunk.otf) format('opentype');
+}
