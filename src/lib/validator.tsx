@@ -21,3 +21,13 @@ export const validatePassword = (password: string): string | null => {
     }
     return null;
   };
+
+export const validateRequiredText = (text: string, min?: number): string | null => {
+  if(text=== "" || text === null){
+    // if(text.length < min){
+    //   return "";
+    // }
+    return "Please enter a value";
+  }
+  return null;
+}
