@@ -6,8 +6,7 @@ interface SidebarItem {
 }
 
 export const SidebarData: SidebarItem[] = [
-    { title: 'Home', path: '#' },
-    { title: 'About', path: '#' },
-    { title: 'Services', path: '#' },
-    { title: 'Contact', path: '#' },
+    { title: 'Dashboard', path: '/dashboard' },
+    { title: 'Finance', path: '/finance' },
+    { title: 'Profile', path: '/profile' },
 ];

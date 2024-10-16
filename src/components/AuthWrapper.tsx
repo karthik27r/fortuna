@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { isUserAuthenticated } from '@/lib/auth/authSetter';
-import Login from '@/pages/Login';
+import Login from '@/pages/Login/Login';
 import { initializeAuth } from '@/lib/auth/authOperations';
+import Sidebar from '@/components/sidebar/Sidebar';
 
 type AuthWrapperProps = {
     children: React.ReactNode;
@@ -22,14 +23,14 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
     }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     if (!isAuthenticated) {
         return <Login />;
     }
 
-    return <>{children}</>;
+    return (<>{children}</>);
 };
 
 export default AuthWrapper;
