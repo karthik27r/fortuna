@@ -7,6 +7,7 @@ import UserProfile from '@/pages/UserProfile/UserProfile'
 import { BackgroundWrapper } from '@/components/BackgroundWrapper'
 import AuthWrapper from '@/components/AuthWrapper'
 import Sidebar from '@/components/sidebar/Sidebar'
+import { ROUTES } from '@/constants/routes'
 
 function App() {
   return (
@@ -17,10 +18,10 @@ function App() {
             <Sidebar />
             <main className="flex-1 overflow-x-hidden overflow-y-auto">
               <Routes>
-                <Route path="/" element={<Navigate to="/dashboard" replace />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/finance" element={<Finance />} />
-                <Route path="/profile" element={<UserProfile />} />
+                <Route path="/" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
+                <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+                <Route path={ROUTES.FINANCE} element={<Finance />} />
+                <Route path={ROUTES.PROFILE} element={<UserProfile />} />
               </Routes>
             </main>
           </div>

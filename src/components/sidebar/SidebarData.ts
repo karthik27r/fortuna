@@ -1,12 +1,8 @@
-interface SidebarItem {
-    title: string;
-    path: string;
-    icon?: string;
-    className?: string;
-}
+import { SidebarItem } from '@/types/sidebar';
+import { ROUTES } from '@/constants/routes';
 
 export const SidebarData: SidebarItem[] = [
-    { title: 'Dashboard', path: '/dashboard' },
-    { title: 'Finance', path: '/finance' },
-    { title: 'Profile', path: '/profile' },
+    { title: 'Dashboard', path: ROUTES.DASHBOARD },
+    { title: 'Finance', path: ROUTES.FINANCE },
+    { title: 'Profile', path: ROUTES.PROFILE },
 ];

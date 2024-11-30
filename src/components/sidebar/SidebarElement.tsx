@@ -1,16 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { SidebarData as menuItems } from '@/components/sidebar/SidebarData';
+import { SidebarItem } from '@/types/sidebar';
+import { ROUTES } from '@/constants/routes';
 
 interface SidebarElementProps {
     isOpen: boolean;
 }
 
 const SidebarElement: React.FC<SidebarElementProps> = ({ isOpen }) => {
+    const navigationItems: SidebarItem[] = [
+        { title: 'Dashboard', path: ROUTES.DASHBOARD },
+        { title: 'Finance', path: ROUTES.FINANCE },
+        { title: 'Profile', path: ROUTES.PROFILE },
+    ];
+
     return (
         <nav className="flex-grow">
             <ul>
-                {menuItems.map((item, index) => (
+                {navigationItems.map((item, index) => (
                     <li key={index} className="mb-4">
                         <NavLink
                             to={item.path}
